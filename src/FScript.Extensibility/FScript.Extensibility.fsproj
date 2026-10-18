@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>MagnusOpera.FScript.Extensibility</PackageId>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Authors>FScript contributors</Authors>
+    <Description>Stable, implementation-independent FScript extension contracts and authoring helpers.</Description>
+    <RepositoryUrl>https://github.com/MagnusOpera/FScript.Extensibility</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MagnusOpera/FScript.Extensibility</PackageProjectUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageValidationBaselineVersion Condition="'$(Version)' != '1.0.0'">1.0.0</PackageValidationBaselineVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Types.fs"/>
+    <Compile Include="Values.fs"/>
+    <Compile Include="HostInterop.fs"/>
+    <Compile Include="HostTypes.fs"/>
+    <Compile Include="HostFunctions.fs"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="10.1.401"/>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="/"/>
+    <None Include="../../README.md" Pack="true" PackagePath="/"/>
+  </ItemGroup>
+</Project>

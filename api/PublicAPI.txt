@@ -1,0 +1,969 @@
+MEMBER FScript.Extensibility.ExtensionException: Constructor Void .ctor(System.String); parameters=message
+MEMBER FScript.Extensibility.ExtensionException: Constructor Void .ctor(System.String, System.Exception); parameters=message,inner
+MEMBER FScript.Extensibility.ExtensionRegistration: Constructor Void .ctor(Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostTypeDescriptor], Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostUnionDescriptor], Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction]); parameters=types,unions,functions
+MEMBER FScript.Extensibility.ExtensionRegistration: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction] get_Functions(); parameters=
+MEMBER FScript.Extensibility.ExtensionRegistration: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostTypeDescriptor] get_Types(); parameters=
+MEMBER FScript.Extensibility.ExtensionRegistration: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostUnionDescriptor] get_Unions(); parameters=
+MEMBER FScript.Extensibility.ExtensionRegistration: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.ExtensionRegistration: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction] Functions
+MEMBER FScript.Extensibility.ExtensionRegistration: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostTypeDescriptor] Types
+MEMBER FScript.Extensibility.ExtensionRegistration: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostUnionDescriptor] Unions
+MEMBER FScript.Extensibility.ExternalCallContext: Constructor Void .ctor(Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue]], Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue], Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue], Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit]); parameters=apply,spawnTask,awaitTask,checkRuntime
+MEMBER FScript.Extensibility.ExternalCallContext: Method Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue] get_AwaitTask(); parameters=
+MEMBER FScript.Extensibility.ExternalCallContext: Method Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue] get_SpawnTask(); parameters=
+MEMBER FScript.Extensibility.ExternalCallContext: Method Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue]] get_Apply(); parameters=
+MEMBER FScript.Extensibility.ExternalCallContext: Method Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit] get_CheckRuntime(); parameters=
+MEMBER FScript.Extensibility.ExternalCallContext: Property Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue] AwaitTask
+MEMBER FScript.Extensibility.ExternalCallContext: Property Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue] SpawnTask
+MEMBER FScript.Extensibility.ExternalCallContext: Property Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ScriptValue,FScript.Extensibility.ScriptValue]] Apply
+MEMBER FScript.Extensibility.ExternalCallContext: Property Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit] CheckRuntime
+MEMBER FScript.Extensibility.ExternalFunction: Constructor Void .ctor(System.String, FScript.Extensibility.FunctionScheme, Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ExternalCallContext,Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue],FScript.Extensibility.ScriptValue]], Int32); parameters=name,scheme,impl,arity
+MEMBER FScript.Extensibility.ExternalFunction: Method FScript.Extensibility.FunctionScheme get_Scheme(); parameters=
+MEMBER FScript.Extensibility.ExternalFunction: Method Int32 get_Arity(); parameters=
+MEMBER FScript.Extensibility.ExternalFunction: Method Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ExternalCallContext,Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue],FScript.Extensibility.ScriptValue]] get_Impl(); parameters=
+MEMBER FScript.Extensibility.ExternalFunction: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.ExternalFunction: Method System.String get_Name(); parameters=
+MEMBER FScript.Extensibility.ExternalFunction: Property FScript.Extensibility.FunctionScheme Scheme
+MEMBER FScript.Extensibility.ExternalFunction: Property Int32 Arity
+MEMBER FScript.Extensibility.ExternalFunction: Property Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ExternalCallContext,Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue],FScript.Extensibility.ScriptValue]] Impl
+MEMBER FScript.Extensibility.ExternalFunction: Property System.String Name
+MEMBER FScript.Extensibility.FScriptExternProviderAttribute: Constructor Void .ctor(); parameters=
+MEMBER FScript.Extensibility.FScriptHostTypeAttribute: Constructor Void .ctor(System.String); parameters=name
+MEMBER FScript.Extensibility.FScriptHostTypeAttribute: Method Boolean get_ScriptConstructible(); parameters=
+MEMBER FScript.Extensibility.FScriptHostTypeAttribute: Method System.String get_Name(); parameters=
+MEMBER FScript.Extensibility.FScriptHostTypeAttribute: Method Void set_ScriptConstructible(Boolean); parameters=v
+MEMBER FScript.Extensibility.FScriptHostTypeAttribute: Property Boolean ScriptConstructible
+MEMBER FScript.Extensibility.FScriptHostTypeAttribute: Property System.String Name
+MEMBER FScript.Extensibility.FScriptVisibleAttribute: Constructor Void .ctor(); parameters=
+MEMBER FScript.Extensibility.FunctionScheme: Method Boolean Equals(FScript.Extensibility.FunctionScheme); parameters=obj
+MEMBER FScript.Extensibility.FunctionScheme: Method Boolean Equals(FScript.Extensibility.FunctionScheme, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.FunctionScheme: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.FunctionScheme: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.FunctionScheme: Method FScript.Extensibility.FunctionScheme NewForall(Microsoft.FSharp.Collections.FSharpList`1[System.Int32], FScript.Extensibility.ScriptType); parameters=item1,item2
+MEMBER FScript.Extensibility.FunctionScheme: Method FScript.Extensibility.ScriptType get_Item2(); parameters=
+MEMBER FScript.Extensibility.FunctionScheme: Method Int32 CompareTo(FScript.Extensibility.FunctionScheme); parameters=obj
+MEMBER FScript.Extensibility.FunctionScheme: Method Int32 CompareTo(System.Object); parameters=obj
+MEMBER FScript.Extensibility.FunctionScheme: Method Int32 CompareTo(System.Object, System.Collections.IComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.FunctionScheme: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.FunctionScheme: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.FunctionScheme: Method Int32 get_Tag(); parameters=
+MEMBER FScript.Extensibility.FunctionScheme: Method Microsoft.FSharp.Collections.FSharpList`1[System.Int32] get_Item1(); parameters=
+MEMBER FScript.Extensibility.FunctionScheme: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.FunctionScheme: Property FScript.Extensibility.ScriptType Item2
+MEMBER FScript.Extensibility.FunctionScheme: Property Int32 Tag
+MEMBER FScript.Extensibility.FunctionScheme: Property Microsoft.FSharp.Collections.FSharpList`1[System.Int32] Item1
+MEMBER FScript.Extensibility.HostContext: Constructor Void .ctor(System.String, Microsoft.FSharp.Collections.FSharpList`1[System.String], Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction]); parameters=rootDirectory,deniedPathGlobs,defaultFunctions
+MEMBER FScript.Extensibility.HostContext: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction] get_DefaultFunctions(); parameters=
+MEMBER FScript.Extensibility.HostContext: Method Microsoft.FSharp.Collections.FSharpList`1[System.String] get_DeniedPathGlobs(); parameters=
+MEMBER FScript.Extensibility.HostContext: Method System.String get_RootDirectory(); parameters=
+MEMBER FScript.Extensibility.HostContext: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction] DefaultFunctions
+MEMBER FScript.Extensibility.HostContext: Property Microsoft.FSharp.Collections.FSharpList`1[System.String] DeniedPathGlobs
+MEMBER FScript.Extensibility.HostContext: Property System.String RootDirectory
+MEMBER FScript.Extensibility.HostFunctions: Method FScript.Extensibility.ExternalFunction create[Handler](FScript.Extensibility.ExtensionRegistration, System.String, Handler); parameters=registration,name,handler
+MEMBER FScript.Extensibility.HostInterop: Method Boolean matches(Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType], FScript.Extensibility.ScriptType, FScript.Extensibility.ScriptValue); parameters=definitions,expected,value
+MEMBER FScript.Extensibility.HostInterop: Method FScript.Extensibility.ExtensionRegistration get_empty(); parameters=
+MEMBER FScript.Extensibility.HostInterop: Method FScript.Extensibility.ExtensionRegistration ofExterns(Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction]); parameters=functions
+MEMBER FScript.Extensibility.HostInterop: Method FScript.Extensibility.HostManagedValue unwrap(System.String, FScript.Extensibility.ScriptValue); parameters=typeName,value
+MEMBER FScript.Extensibility.HostInterop: Method FScript.Extensibility.ScriptValue create[a](FScript.Extensibility.ExtensionRegistration, System.String, Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue], a); parameters=registration,typeName,fields,payload
+MEMBER FScript.Extensibility.HostInterop: Method FScript.Extensibility.ScriptValue invoke(Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType], FScript.Extensibility.ExternalFunction, FScript.Extensibility.ExternalCallContext, Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue]); parameters=definitions,externalFunction,context,arguments
+MEMBER FScript.Extensibility.HostInterop: Method FScript.Extensibility.ScriptValue validateCall(Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType], FScript.Extensibility.ScriptType, Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue], Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Core.Unit,FScript.Extensibility.ScriptValue]); parameters=definitions,signature,arguments,action
+MEMBER FScript.Extensibility.HostInterop: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] typeDefinitions(FScript.Extensibility.ExtensionRegistration, Microsoft.FSharp.Collections.FSharpList`1[System.String]); parameters=registration,scriptNames
+MEMBER FScript.Extensibility.HostInterop: Method Microsoft.FSharp.Core.FSharpOption`1[Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue]] |RecordFields|_|(FScript.Extensibility.ScriptValue); parameters=value
+MEMBER FScript.Extensibility.HostInterop: Method Void validate(Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType], FScript.Extensibility.ScriptType, FScript.Extensibility.ScriptValue); parameters=definitions,expected,value
+MEMBER FScript.Extensibility.HostInterop: Property FScript.Extensibility.ExtensionRegistration empty
+MEMBER FScript.Extensibility.HostManagedValue: Constructor Void .ctor(FScript.Extensibility.HostTypeDescriptor, Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue], System.Object); parameters=descriptor,fields,payload
+MEMBER FScript.Extensibility.HostManagedValue: Method Boolean Equals(FScript.Extensibility.HostManagedValue); parameters=obj
+MEMBER FScript.Extensibility.HostManagedValue: Method Boolean Equals(FScript.Extensibility.HostManagedValue, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostManagedValue: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.HostManagedValue: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostManagedValue: Method FScript.Extensibility.HostTypeDescriptor get_Descriptor(); parameters=
+MEMBER FScript.Extensibility.HostManagedValue: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.HostManagedValue: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.HostManagedValue: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue] get_Fields(); parameters=
+MEMBER FScript.Extensibility.HostManagedValue: Method System.Object get_Payload(); parameters=
+MEMBER FScript.Extensibility.HostManagedValue: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.HostManagedValue: Property FScript.Extensibility.HostTypeDescriptor Descriptor
+MEMBER FScript.Extensibility.HostManagedValue: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue] Fields
+MEMBER FScript.Extensibility.HostManagedValue: Property System.Object Payload
+MEMBER FScript.Extensibility.HostTypeDescriptor: Constructor Void .ctor(System.String, Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType], Boolean); parameters=name,fields,hostManaged
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Boolean Equals(FScript.Extensibility.HostTypeDescriptor); parameters=obj
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Boolean Equals(FScript.Extensibility.HostTypeDescriptor, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Boolean get_HostManaged(); parameters=
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Int32 CompareTo(FScript.Extensibility.HostTypeDescriptor); parameters=obj
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Int32 CompareTo(System.Object); parameters=obj
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Int32 CompareTo(System.Object, System.Collections.IComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] get_Fields(); parameters=
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.HostTypeDescriptor: Method System.String get_Name(); parameters=
+MEMBER FScript.Extensibility.HostTypeDescriptor: Property Boolean HostManaged
+MEMBER FScript.Extensibility.HostTypeDescriptor: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] Fields
+MEMBER FScript.Extensibility.HostTypeDescriptor: Property System.String Name
+MEMBER FScript.Extensibility.HostTypes: Method FScript.Extensibility.HostTypeDescriptor describe[T](); parameters=
+MEMBER FScript.Extensibility.HostTypes: Method FScript.Extensibility.HostUnionDescriptor describeUnion[T](); parameters=
+MEMBER FScript.Extensibility.HostTypes: Method FScript.Extensibility.ScriptValue wrap[T](FScript.Extensibility.ExtensionRegistration, T); parameters=registration,value
+MEMBER FScript.Extensibility.HostTypes: Method T unwrap[T](FScript.Extensibility.ScriptValue); parameters=value
+MEMBER FScript.Extensibility.HostUnionDescriptor: Constructor Void .ctor(System.String, Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]]); parameters=name,cases
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Boolean Equals(FScript.Extensibility.HostUnionDescriptor); parameters=obj
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Boolean Equals(FScript.Extensibility.HostUnionDescriptor, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Int32 CompareTo(FScript.Extensibility.HostUnionDescriptor); parameters=obj
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Int32 CompareTo(System.Object); parameters=obj
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Int32 CompareTo(System.Object, System.Collections.IComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]] get_Cases(); parameters=
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.HostUnionDescriptor: Method System.String get_Name(); parameters=
+MEMBER FScript.Extensibility.HostUnionDescriptor: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]] Cases
+MEMBER FScript.Extensibility.HostUnionDescriptor: Property System.String Name
+MEMBER FScript.Extensibility.MapKey+MKBool: Method Boolean get_Item(); parameters=
+MEMBER FScript.Extensibility.MapKey+MKBool: Property Boolean Item
+MEMBER FScript.Extensibility.MapKey+MKInt: Method Int64 get_Item(); parameters=
+MEMBER FScript.Extensibility.MapKey+MKInt: Property Int64 Item
+MEMBER FScript.Extensibility.MapKey+MKString: Method System.String get_Item(); parameters=
+MEMBER FScript.Extensibility.MapKey+MKString: Property System.String Item
+MEMBER FScript.Extensibility.MapKey+MKUnionCase: Method System.String get_Item1(); parameters=
+MEMBER FScript.Extensibility.MapKey+MKUnionCase: Method System.String get_Item2(); parameters=
+MEMBER FScript.Extensibility.MapKey+MKUnionCase: Property System.String Item1
+MEMBER FScript.Extensibility.MapKey+MKUnionCase: Property System.String Item2
+MEMBER FScript.Extensibility.MapKey+Tags: Field Int32 MKBool = 2
+MEMBER FScript.Extensibility.MapKey+Tags: Field Int32 MKInt = 1
+MEMBER FScript.Extensibility.MapKey+Tags: Field Int32 MKString = 0
+MEMBER FScript.Extensibility.MapKey+Tags: Field Int32 MKUnionCase = 3
+MEMBER FScript.Extensibility.MapKey: Method Boolean Equals(FScript.Extensibility.MapKey); parameters=obj
+MEMBER FScript.Extensibility.MapKey: Method Boolean Equals(FScript.Extensibility.MapKey, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.MapKey: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.MapKey: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.MapKey: Method Boolean get_IsMKBool(); parameters=
+MEMBER FScript.Extensibility.MapKey: Method Boolean get_IsMKInt(); parameters=
+MEMBER FScript.Extensibility.MapKey: Method Boolean get_IsMKString(); parameters=
+MEMBER FScript.Extensibility.MapKey: Method Boolean get_IsMKUnionCase(); parameters=
+MEMBER FScript.Extensibility.MapKey: Method FScript.Extensibility.MapKey NewMKBool(Boolean); parameters=item
+MEMBER FScript.Extensibility.MapKey: Method FScript.Extensibility.MapKey NewMKInt(Int64); parameters=item
+MEMBER FScript.Extensibility.MapKey: Method FScript.Extensibility.MapKey NewMKString(System.String); parameters=item
+MEMBER FScript.Extensibility.MapKey: Method FScript.Extensibility.MapKey NewMKUnionCase(System.String, System.String); parameters=item1,item2
+MEMBER FScript.Extensibility.MapKey: Method Int32 CompareTo(FScript.Extensibility.MapKey); parameters=obj
+MEMBER FScript.Extensibility.MapKey: Method Int32 CompareTo(System.Object); parameters=obj
+MEMBER FScript.Extensibility.MapKey: Method Int32 CompareTo(System.Object, System.Collections.IComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.MapKey: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.MapKey: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.MapKey: Method Int32 get_Tag(); parameters=
+MEMBER FScript.Extensibility.MapKey: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.MapKey: NestedType FScript.Extensibility.MapKey+MKBool
+MEMBER FScript.Extensibility.MapKey: NestedType FScript.Extensibility.MapKey+MKInt
+MEMBER FScript.Extensibility.MapKey: NestedType FScript.Extensibility.MapKey+MKString
+MEMBER FScript.Extensibility.MapKey: NestedType FScript.Extensibility.MapKey+MKUnionCase
+MEMBER FScript.Extensibility.MapKey: NestedType FScript.Extensibility.MapKey+Tags
+MEMBER FScript.Extensibility.MapKey: Property Boolean IsMKBool
+MEMBER FScript.Extensibility.MapKey: Property Boolean IsMKInt
+MEMBER FScript.Extensibility.MapKey: Property Boolean IsMKString
+MEMBER FScript.Extensibility.MapKey: Property Boolean IsMKUnionCase
+MEMBER FScript.Extensibility.MapKey: Property Int32 Tag
+MEMBER FScript.Extensibility.ScriptType+TFun: Method FScript.Extensibility.ScriptType get_Item1(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TFun: Method FScript.Extensibility.ScriptType get_Item2(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TFun: Property FScript.Extensibility.ScriptType Item1
+MEMBER FScript.Extensibility.ScriptType+TFun: Property FScript.Extensibility.ScriptType Item2
+MEMBER FScript.Extensibility.ScriptType+THostManaged: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] get_fields(); parameters=
+MEMBER FScript.Extensibility.ScriptType+THostManaged: Method System.String get_name(); parameters=
+MEMBER FScript.Extensibility.ScriptType+THostManaged: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] fields
+MEMBER FScript.Extensibility.ScriptType+THostManaged: Property System.String name
+MEMBER FScript.Extensibility.ScriptType+TList: Method FScript.Extensibility.ScriptType get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TList: Property FScript.Extensibility.ScriptType Item
+MEMBER FScript.Extensibility.ScriptType+TMap: Method FScript.Extensibility.ScriptType get_Item1(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TMap: Method FScript.Extensibility.ScriptType get_Item2(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TMap: Property FScript.Extensibility.ScriptType Item1
+MEMBER FScript.Extensibility.ScriptType+TMap: Property FScript.Extensibility.ScriptType Item2
+MEMBER FScript.Extensibility.ScriptType+TNamed: Method System.String get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TNamed: Property System.String Item
+MEMBER FScript.Extensibility.ScriptType+TNumeric: Method Int32 get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TNumeric: Property Int32 Item
+MEMBER FScript.Extensibility.ScriptType+TOption: Method FScript.Extensibility.ScriptType get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TOption: Property FScript.Extensibility.ScriptType Item
+MEMBER FScript.Extensibility.ScriptType+TRecord: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TRecord: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType] Item
+MEMBER FScript.Extensibility.ScriptType+TTask: Method FScript.Extensibility.ScriptType get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TTask: Property FScript.Extensibility.ScriptType Item
+MEMBER FScript.Extensibility.ScriptType+TTuple: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TTuple: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType] Item
+MEMBER FScript.Extensibility.ScriptType+TUnion: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]] get_Item2(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TUnion: Method System.String get_Item1(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TUnion: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]] Item2
+MEMBER FScript.Extensibility.ScriptType+TUnion: Property System.String Item1
+MEMBER FScript.Extensibility.ScriptType+TVar: Method Int32 get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptType+TVar: Property Int32 Item
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TBool = 3
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TFloat = 2
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TFun = 11
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 THostManaged = 17
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TInt = 1
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TList = 5
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TMap = 9
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TNamed = 12
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TNumeric = 16
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TOption = 10
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TRecord = 8
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TString = 4
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TTask = 6
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TTuple = 7
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TTypeToken = 14
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TUnion = 13
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TUnit = 0
+MEMBER FScript.Extensibility.ScriptType+Tags: Field Int32 TVar = 15
+MEMBER FScript.Extensibility.ScriptType: Method Boolean Equals(FScript.Extensibility.ScriptType); parameters=obj
+MEMBER FScript.Extensibility.ScriptType: Method Boolean Equals(FScript.Extensibility.ScriptType, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.ScriptType: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.ScriptType: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTBool(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTFloat(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTFun(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTHostManaged(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTInt(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTList(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTMap(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTNamed(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTNumeric(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTOption(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTRecord(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTString(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTTask(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTTuple(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTTypeToken(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTUnion(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTUnit(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Boolean get_IsTVar(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTFun(FScript.Extensibility.ScriptType, FScript.Extensibility.ScriptType); parameters=item1,item2
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTHostManaged(System.String, Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType]); parameters=_name,_fields
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTList(FScript.Extensibility.ScriptType); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTMap(FScript.Extensibility.ScriptType, FScript.Extensibility.ScriptType); parameters=item1,item2
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTNamed(System.String); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTNumeric(Int32); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTOption(FScript.Extensibility.ScriptType); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTRecord(Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType]); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTTask(FScript.Extensibility.ScriptType); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTTuple(Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType]); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTUnion(System.String, Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]]); parameters=item1,item2
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType NewTVar(Int32); parameters=item
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType get_TBool(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType get_TFloat(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType get_TInt(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType get_TString(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType get_TTypeToken(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method FScript.Extensibility.ScriptType get_TUnit(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Int32 CompareTo(FScript.Extensibility.ScriptType); parameters=obj
+MEMBER FScript.Extensibility.ScriptType: Method Int32 CompareTo(System.Object); parameters=obj
+MEMBER FScript.Extensibility.ScriptType: Method Int32 CompareTo(System.Object, System.Collections.IComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.ScriptType: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.ScriptType: Method Int32 get_Tag(); parameters=
+MEMBER FScript.Extensibility.ScriptType: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TFun
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+THostManaged
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TList
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TMap
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TNamed
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TNumeric
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TOption
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TRecord
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TTask
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TTuple
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TUnion
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+TVar
+MEMBER FScript.Extensibility.ScriptType: NestedType FScript.Extensibility.ScriptType+Tags
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTBool
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTFloat
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTFun
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTHostManaged
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTInt
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTList
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTMap
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTNamed
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTNumeric
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTOption
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTRecord
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTString
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTTask
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTTuple
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTTypeToken
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTUnion
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTUnit
+MEMBER FScript.Extensibility.ScriptType: Property Boolean IsTVar
+MEMBER FScript.Extensibility.ScriptType: Property FScript.Extensibility.ScriptType TBool
+MEMBER FScript.Extensibility.ScriptType: Property FScript.Extensibility.ScriptType TFloat
+MEMBER FScript.Extensibility.ScriptType: Property FScript.Extensibility.ScriptType TInt
+MEMBER FScript.Extensibility.ScriptType: Property FScript.Extensibility.ScriptType TString
+MEMBER FScript.Extensibility.ScriptType: Property FScript.Extensibility.ScriptType TTypeToken
+MEMBER FScript.Extensibility.ScriptType: Property FScript.Extensibility.ScriptType TUnit
+MEMBER FScript.Extensibility.ScriptType: Property Int32 Tag
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VBool = 3
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VCallable = 12
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VFloat = 2
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VHostManaged = 14
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VInt = 1
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VList = 5
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VMap = 8
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VOption = 9
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VRecord = 7
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VString = 4
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VTask = 13
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VTuple = 6
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VTypeToken = 11
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VUnionCase = 10
+MEMBER FScript.Extensibility.ScriptValue+Tags: Field Int32 VUnit = 0
+MEMBER FScript.Extensibility.ScriptValue+VBool: Method Boolean get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VBool: Property Boolean Item
+MEMBER FScript.Extensibility.ScriptValue+VCallable: Method FScript.Extensibility.ICallableHandle get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VCallable: Property FScript.Extensibility.ICallableHandle Item
+MEMBER FScript.Extensibility.ScriptValue+VFloat: Method Double get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VFloat: Property Double Item
+MEMBER FScript.Extensibility.ScriptValue+VHostManaged: Method FScript.Extensibility.HostManagedValue get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VHostManaged: Property FScript.Extensibility.HostManagedValue Item
+MEMBER FScript.Extensibility.ScriptValue+VInt: Method Int64 get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VInt: Property Int64 Item
+MEMBER FScript.Extensibility.ScriptValue+VList: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VList: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue] Item
+MEMBER FScript.Extensibility.ScriptValue+VMap: Method Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VMap: Property Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue] Item
+MEMBER FScript.Extensibility.ScriptValue+VOption: Method Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VOption: Property Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue] Item
+MEMBER FScript.Extensibility.ScriptValue+VRecord: Method Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VRecord: Property Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue] Item
+MEMBER FScript.Extensibility.ScriptValue+VString: Method System.String get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VString: Property System.String Item
+MEMBER FScript.Extensibility.ScriptValue+VTask: Method FScript.Extensibility.ITaskHandle get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VTask: Property FScript.Extensibility.ITaskHandle Item
+MEMBER FScript.Extensibility.ScriptValue+VTuple: Method Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue] get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VTuple: Property Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue] Item
+MEMBER FScript.Extensibility.ScriptValue+VTypeToken: Method FScript.Extensibility.ScriptType get_Item(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VTypeToken: Property FScript.Extensibility.ScriptType Item
+MEMBER FScript.Extensibility.ScriptValue+VUnionCase: Method Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue] get_Item3(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VUnionCase: Method System.String get_Item1(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VUnionCase: Method System.String get_Item2(); parameters=
+MEMBER FScript.Extensibility.ScriptValue+VUnionCase: Property Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue] Item3
+MEMBER FScript.Extensibility.ScriptValue+VUnionCase: Property System.String Item1
+MEMBER FScript.Extensibility.ScriptValue+VUnionCase: Property System.String Item2
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean Equals(FScript.Extensibility.ScriptValue); parameters=obj
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean Equals(FScript.Extensibility.ScriptValue, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean Equals(System.Object); parameters=obj
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean Equals(System.Object, System.Collections.IEqualityComparer); parameters=obj,comp
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVBool(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVCallable(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVFloat(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVHostManaged(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVInt(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVList(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVMap(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVOption(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVRecord(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVString(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVTask(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVTuple(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVTypeToken(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVUnionCase(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Boolean get_IsVUnit(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVBool(Boolean); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVCallable(FScript.Extensibility.ICallableHandle); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVFloat(Double); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVHostManaged(FScript.Extensibility.HostManagedValue); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVInt(Int64); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVList(Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue]); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVMap(Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue]); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVOption(Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue]); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVRecord(Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue]); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVString(System.String); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVTask(FScript.Extensibility.ITaskHandle); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVTuple(Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue]); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVTypeToken(FScript.Extensibility.ScriptType); parameters=item
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue NewVUnionCase(System.String, System.String, Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue]); parameters=item1,item2,item3
+MEMBER FScript.Extensibility.ScriptValue: Method FScript.Extensibility.ScriptValue get_VUnit(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Int32 GetHashCode(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method Int32 GetHashCode(System.Collections.IEqualityComparer); parameters=comp
+MEMBER FScript.Extensibility.ScriptValue: Method Int32 get_Tag(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: Method System.String ToString(); parameters=
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+Tags
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VBool
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VCallable
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VFloat
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VHostManaged
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VInt
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VList
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VMap
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VOption
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VRecord
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VString
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VTask
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VTuple
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VTypeToken
+MEMBER FScript.Extensibility.ScriptValue: NestedType FScript.Extensibility.ScriptValue+VUnionCase
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVBool
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVCallable
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVFloat
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVHostManaged
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVInt
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVList
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVMap
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVOption
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVRecord
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVString
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVTask
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVTuple
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVTypeToken
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVUnionCase
+MEMBER FScript.Extensibility.ScriptValue: Property Boolean IsVUnit
+MEMBER FScript.Extensibility.ScriptValue: Property FScript.Extensibility.ScriptValue VUnit
+MEMBER FScript.Extensibility.ScriptValue: Property Int32 Tag
+MEMBER FScript.Extensibility.Types: Method Microsoft.FSharp.Collections.FSharpSet`1[System.Int32] ftvType(FScript.Extensibility.ScriptType); parameters=t
+MEMBER FScript.Extensibility.Types: Method System.String typeToString(FScript.Extensibility.ScriptType); parameters=t
+RECORD FScript.Extensibility.ExtensionRegistration[0] Types: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostTypeDescriptor]
+RECORD FScript.Extensibility.ExtensionRegistration[1] Unions: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.HostUnionDescriptor]
+RECORD FScript.Extensibility.ExtensionRegistration[2] Functions: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ExternalFunction]
+RECORD FScript.Extensibility.ExternalFunction[0] Name: System.String
+RECORD FScript.Extensibility.ExternalFunction[1] Scheme: FScript.Extensibility.FunctionScheme
+RECORD FScript.Extensibility.ExternalFunction[2] Impl: Microsoft.FSharp.Core.FSharpFunc`2[FScript.Extensibility.ExternalCallContext,Microsoft.FSharp.Core.FSharpFunc`2[Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue],FScript.Extensibility.ScriptValue]]
+RECORD FScript.Extensibility.ExternalFunction[3] Arity: System.Int32
+RECORD FScript.Extensibility.HostManagedValue[0] Descriptor: FScript.Extensibility.HostTypeDescriptor
+RECORD FScript.Extensibility.HostManagedValue[1] Fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue]
+RECORD FScript.Extensibility.HostManagedValue[2] Payload: System.Object
+RECORD FScript.Extensibility.HostTypeDescriptor[0] Name: System.String
+RECORD FScript.Extensibility.HostTypeDescriptor[1] Fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType]
+RECORD FScript.Extensibility.HostTypeDescriptor[2] HostManaged: System.Boolean
+RECORD FScript.Extensibility.HostUnionDescriptor[0] Name: System.String
+RECORD FScript.Extensibility.HostUnionDescriptor[1] Cases: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]]
+TYPE FScript.Extensibility.ExtensionException : System.Exception; Public, Sealed, Serializable; interfaces=System.Runtime.Serialization.ISerializable
+TYPE FScript.Extensibility.ExtensionRegistration : System.Object; Public, Sealed, Serializable; interfaces=
+TYPE FScript.Extensibility.ExternalCallContext : System.Object; Public, Sealed, Serializable; interfaces=
+TYPE FScript.Extensibility.ExternalFunction : System.Object; Public, Sealed, Serializable; interfaces=
+TYPE FScript.Extensibility.FScriptExternProviderAttribute : System.Attribute; Public, Serializable; interfaces=
+TYPE FScript.Extensibility.FScriptHostTypeAttribute : System.Attribute; Public, Serializable; interfaces=
+TYPE FScript.Extensibility.FScriptVisibleAttribute : System.Attribute; Public, Serializable; interfaces=
+TYPE FScript.Extensibility.FunctionScheme : System.Object; Public, Sealed, Serializable, AutoClass, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.FunctionScheme],System.IEquatable`1[FScript.Extensibility.FunctionScheme]
+TYPE FScript.Extensibility.HostContext : System.Object; Public, Sealed, Serializable; interfaces=
+TYPE FScript.Extensibility.HostFunctions : System.Object; Public, Abstract, Sealed; interfaces=
+TYPE FScript.Extensibility.HostInterop : System.Object; Public, Abstract, Sealed; interfaces=
+TYPE FScript.Extensibility.HostManagedValue : System.Object; Public, Sealed, Serializable; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.HostManagedValue]
+TYPE FScript.Extensibility.HostTypeDescriptor : System.Object; Public, Sealed, Serializable; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.HostTypeDescriptor],System.IEquatable`1[FScript.Extensibility.HostTypeDescriptor]
+TYPE FScript.Extensibility.HostTypes : System.Object; Public, Abstract, Sealed; interfaces=
+TYPE FScript.Extensibility.HostUnionDescriptor : System.Object; Public, Sealed, Serializable; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.HostUnionDescriptor],System.IEquatable`1[FScript.Extensibility.HostUnionDescriptor]
+TYPE FScript.Extensibility.ICallableHandle : ; Public, ClassSemanticsMask, Abstract, Serializable; interfaces=
+TYPE FScript.Extensibility.ITaskHandle : ; Public, ClassSemanticsMask, Abstract, Serializable; interfaces=
+TYPE FScript.Extensibility.MapKey : System.Object; Public, Abstract, Serializable, AutoClass, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.MapKey],System.IEquatable`1[FScript.Extensibility.MapKey]
+TYPE FScript.Extensibility.MapKey+MKBool : FScript.Extensibility.MapKey; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.MapKey],System.IEquatable`1[FScript.Extensibility.MapKey]
+TYPE FScript.Extensibility.MapKey+MKInt : FScript.Extensibility.MapKey; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.MapKey],System.IEquatable`1[FScript.Extensibility.MapKey]
+TYPE FScript.Extensibility.MapKey+MKString : FScript.Extensibility.MapKey; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.MapKey],System.IEquatable`1[FScript.Extensibility.MapKey]
+TYPE FScript.Extensibility.MapKey+MKUnionCase : FScript.Extensibility.MapKey; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.MapKey],System.IEquatable`1[FScript.Extensibility.MapKey]
+TYPE FScript.Extensibility.MapKey+Tags : System.Object; NestedPublic, Abstract, Sealed; interfaces=
+TYPE FScript.Extensibility.ScriptType : System.Object; Public, Serializable, AutoClass, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TFun : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+THostManaged : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TList : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TMap : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TNamed : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TNumeric : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TOption : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TRecord : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TTask : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TTuple : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TUnion : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+TVar : FScript.Extensibility.ScriptType; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralComparable,System.Collections.IStructuralEquatable,System.IComparable,System.IComparable`1[FScript.Extensibility.ScriptType],System.IEquatable`1[FScript.Extensibility.ScriptType]
+TYPE FScript.Extensibility.ScriptType+Tags : System.Object; NestedPublic, Abstract, Sealed; interfaces=
+TYPE FScript.Extensibility.ScriptValue : System.Object; Public, Serializable, AutoClass, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+Tags : System.Object; NestedPublic, Abstract, Sealed; interfaces=
+TYPE FScript.Extensibility.ScriptValue+VBool : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VCallable : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VFloat : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VHostManaged : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VInt : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VList : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VMap : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VOption : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VRecord : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VString : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VTask : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VTuple : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VTypeToken : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.ScriptValue+VUnionCase : FScript.Extensibility.ScriptValue; NestedPublic, SpecialName, Serializable, BeforeFieldInit; interfaces=System.Collections.IStructuralEquatable,System.IEquatable`1[FScript.Extensibility.ScriptValue]
+TYPE FScript.Extensibility.Types : System.Object; Public, Abstract, Sealed; interfaces=
+UNION FScript.Extensibility.FunctionScheme[0] Forall(Item1: Microsoft.FSharp.Collections.FSharpList`1[System.Int32]; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.MapKey+MKBool[0] MKString(Item: System.String)
+UNION FScript.Extensibility.MapKey+MKBool[1] MKInt(Item: System.Int64)
+UNION FScript.Extensibility.MapKey+MKBool[2] MKBool(Item: System.Boolean)
+UNION FScript.Extensibility.MapKey+MKBool[3] MKUnionCase(Item1: System.String; Item2: System.String)
+UNION FScript.Extensibility.MapKey+MKInt[0] MKString(Item: System.String)
+UNION FScript.Extensibility.MapKey+MKInt[1] MKInt(Item: System.Int64)
+UNION FScript.Extensibility.MapKey+MKInt[2] MKBool(Item: System.Boolean)
+UNION FScript.Extensibility.MapKey+MKInt[3] MKUnionCase(Item1: System.String; Item2: System.String)
+UNION FScript.Extensibility.MapKey+MKString[0] MKString(Item: System.String)
+UNION FScript.Extensibility.MapKey+MKString[1] MKInt(Item: System.Int64)
+UNION FScript.Extensibility.MapKey+MKString[2] MKBool(Item: System.Boolean)
+UNION FScript.Extensibility.MapKey+MKString[3] MKUnionCase(Item1: System.String; Item2: System.String)
+UNION FScript.Extensibility.MapKey+MKUnionCase[0] MKString(Item: System.String)
+UNION FScript.Extensibility.MapKey+MKUnionCase[1] MKInt(Item: System.Int64)
+UNION FScript.Extensibility.MapKey+MKUnionCase[2] MKBool(Item: System.Boolean)
+UNION FScript.Extensibility.MapKey+MKUnionCase[3] MKUnionCase(Item1: System.String; Item2: System.String)
+UNION FScript.Extensibility.MapKey[0] MKString(Item: System.String)
+UNION FScript.Extensibility.MapKey[1] MKInt(Item: System.Int64)
+UNION FScript.Extensibility.MapKey[2] MKBool(Item: System.Boolean)
+UNION FScript.Extensibility.MapKey[3] MKUnionCase(Item1: System.String; Item2: System.String)
+UNION FScript.Extensibility.ScriptType+TFun[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TFun[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TFun[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TFun[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TFun[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TFun[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TFun[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TFun[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TFun[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TFun[1] TInt()
+UNION FScript.Extensibility.ScriptType+TFun[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TFun[3] TBool()
+UNION FScript.Extensibility.ScriptType+TFun[4] TString()
+UNION FScript.Extensibility.ScriptType+TFun[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TFun[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TFun[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TFun[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TFun[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+THostManaged[0] TUnit()
+UNION FScript.Extensibility.ScriptType+THostManaged[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+THostManaged[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+THostManaged[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+THostManaged[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+THostManaged[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+THostManaged[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+THostManaged[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+THostManaged[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+THostManaged[1] TInt()
+UNION FScript.Extensibility.ScriptType+THostManaged[2] TFloat()
+UNION FScript.Extensibility.ScriptType+THostManaged[3] TBool()
+UNION FScript.Extensibility.ScriptType+THostManaged[4] TString()
+UNION FScript.Extensibility.ScriptType+THostManaged[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+THostManaged[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+THostManaged[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+THostManaged[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+THostManaged[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TList[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TList[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TList[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TList[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TList[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TList[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TList[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TList[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TList[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TList[1] TInt()
+UNION FScript.Extensibility.ScriptType+TList[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TList[3] TBool()
+UNION FScript.Extensibility.ScriptType+TList[4] TString()
+UNION FScript.Extensibility.ScriptType+TList[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TList[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TList[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TList[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TList[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TMap[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TMap[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TMap[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TMap[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TMap[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TMap[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TMap[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TMap[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TMap[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TMap[1] TInt()
+UNION FScript.Extensibility.ScriptType+TMap[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TMap[3] TBool()
+UNION FScript.Extensibility.ScriptType+TMap[4] TString()
+UNION FScript.Extensibility.ScriptType+TMap[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TMap[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TMap[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TMap[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TMap[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNamed[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TNamed[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNamed[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNamed[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TNamed[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TNamed[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TNamed[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TNamed[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TNamed[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TNamed[1] TInt()
+UNION FScript.Extensibility.ScriptType+TNamed[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TNamed[3] TBool()
+UNION FScript.Extensibility.ScriptType+TNamed[4] TString()
+UNION FScript.Extensibility.ScriptType+TNamed[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNamed[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNamed[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TNamed[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TNamed[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNumeric[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TNumeric[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNumeric[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNumeric[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TNumeric[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TNumeric[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TNumeric[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TNumeric[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TNumeric[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TNumeric[1] TInt()
+UNION FScript.Extensibility.ScriptType+TNumeric[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TNumeric[3] TBool()
+UNION FScript.Extensibility.ScriptType+TNumeric[4] TString()
+UNION FScript.Extensibility.ScriptType+TNumeric[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNumeric[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TNumeric[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TNumeric[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TNumeric[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TOption[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TOption[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TOption[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TOption[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TOption[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TOption[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TOption[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TOption[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TOption[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TOption[1] TInt()
+UNION FScript.Extensibility.ScriptType+TOption[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TOption[3] TBool()
+UNION FScript.Extensibility.ScriptType+TOption[4] TString()
+UNION FScript.Extensibility.ScriptType+TOption[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TOption[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TOption[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TOption[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TOption[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TRecord[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TRecord[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TRecord[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TRecord[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TRecord[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TRecord[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TRecord[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TRecord[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TRecord[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TRecord[1] TInt()
+UNION FScript.Extensibility.ScriptType+TRecord[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TRecord[3] TBool()
+UNION FScript.Extensibility.ScriptType+TRecord[4] TString()
+UNION FScript.Extensibility.ScriptType+TRecord[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TRecord[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TRecord[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TRecord[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TRecord[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTask[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TTask[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTask[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTask[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TTask[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TTask[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TTask[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TTask[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TTask[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TTask[1] TInt()
+UNION FScript.Extensibility.ScriptType+TTask[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TTask[3] TBool()
+UNION FScript.Extensibility.ScriptType+TTask[4] TString()
+UNION FScript.Extensibility.ScriptType+TTask[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTask[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTask[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TTask[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TTask[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTuple[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TTuple[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTuple[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTuple[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TTuple[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TTuple[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TTuple[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TTuple[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TTuple[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TTuple[1] TInt()
+UNION FScript.Extensibility.ScriptType+TTuple[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TTuple[3] TBool()
+UNION FScript.Extensibility.ScriptType+TTuple[4] TString()
+UNION FScript.Extensibility.ScriptType+TTuple[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTuple[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TTuple[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TTuple[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TTuple[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TUnion[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TUnion[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TUnion[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TUnion[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TUnion[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TUnion[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TUnion[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TUnion[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TUnion[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TUnion[1] TInt()
+UNION FScript.Extensibility.ScriptType+TUnion[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TUnion[3] TBool()
+UNION FScript.Extensibility.ScriptType+TUnion[4] TString()
+UNION FScript.Extensibility.ScriptType+TUnion[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TUnion[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TUnion[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TUnion[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TUnion[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TVar[0] TUnit()
+UNION FScript.Extensibility.ScriptType+TVar[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TVar[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TVar[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType+TVar[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType+TVar[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType+TVar[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TVar[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType+TVar[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TVar[1] TInt()
+UNION FScript.Extensibility.ScriptType+TVar[2] TFloat()
+UNION FScript.Extensibility.ScriptType+TVar[3] TBool()
+UNION FScript.Extensibility.ScriptType+TVar[4] TString()
+UNION FScript.Extensibility.ScriptType+TVar[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TVar[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType+TVar[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TVar[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType+TVar[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType[0] TUnit()
+UNION FScript.Extensibility.ScriptType[10] TOption(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType[11] TFun(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType[12] TNamed(Item: System.String)
+UNION FScript.Extensibility.ScriptType[13] TUnion(Item1: System.String; Item2: Microsoft.FSharp.Collections.FSharpMap`2[System.String,Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptType]])
+UNION FScript.Extensibility.ScriptType[14] TTypeToken()
+UNION FScript.Extensibility.ScriptType[15] TVar(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType[16] TNumeric(Item: System.Int32)
+UNION FScript.Extensibility.ScriptType[17] THostManaged(name: System.String; fields: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType[1] TInt()
+UNION FScript.Extensibility.ScriptType[2] TFloat()
+UNION FScript.Extensibility.ScriptType[3] TBool()
+UNION FScript.Extensibility.ScriptType[4] TString()
+UNION FScript.Extensibility.ScriptType[5] TList(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType[6] TTask(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptType[7] TTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType[8] TRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptType])
+UNION FScript.Extensibility.ScriptType[9] TMap(Item1: FScript.Extensibility.ScriptType; Item2: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VBool[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VBool[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VBool[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VBool[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VBool[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VBool[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VBool[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VBool[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VBool[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VBool[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VBool[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VBool[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VBool[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VBool[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VBool[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VCallable[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VCallable[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VCallable[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VCallable[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VCallable[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VCallable[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VCallable[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VCallable[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VCallable[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VCallable[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VCallable[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VCallable[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VCallable[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VCallable[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VCallable[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VFloat[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VFloat[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VFloat[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VFloat[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VFloat[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VFloat[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VFloat[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VFloat[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VFloat[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VFloat[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VFloat[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VFloat[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VFloat[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VFloat[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VFloat[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VHostManaged[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VHostManaged[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VHostManaged[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VHostManaged[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VHostManaged[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VHostManaged[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VHostManaged[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VHostManaged[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VInt[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VInt[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VInt[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VInt[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VInt[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VInt[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VInt[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VInt[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VInt[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VInt[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VInt[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VInt[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VInt[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VInt[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VInt[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VList[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VList[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VList[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VList[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VList[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VList[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VList[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VList[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VList[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VList[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VList[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VList[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VList[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VList[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VList[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VMap[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VMap[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VMap[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VMap[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VMap[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VMap[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VMap[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VMap[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VMap[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VMap[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VMap[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VMap[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VMap[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VMap[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VMap[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VOption[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VOption[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VOption[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VOption[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VOption[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VOption[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VOption[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VOption[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VOption[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VOption[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VOption[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VOption[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VOption[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VOption[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VOption[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VRecord[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VRecord[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VRecord[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VRecord[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VRecord[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VRecord[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VRecord[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VRecord[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VRecord[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VRecord[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VRecord[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VRecord[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VRecord[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VRecord[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VRecord[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VString[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VString[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VString[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VString[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VString[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VString[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VString[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VString[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VString[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VString[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VString[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VString[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VString[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VString[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VString[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTask[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VTask[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTask[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VTask[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VTask[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VTask[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VTask[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VTask[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VTask[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VTask[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VTask[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTask[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTask[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTask[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTask[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTuple[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VTuple[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTuple[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VTuple[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VTuple[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VTuple[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VTuple[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VTuple[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VTuple[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VTuple[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VTuple[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTuple[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTuple[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTuple[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTuple[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTypeToken[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VTypeToken[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTypeToken[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VTypeToken[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTypeToken[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTypeToken[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTypeToken[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VTypeToken[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VUnionCase[0] VUnit()
+UNION FScript.Extensibility.ScriptValue+VUnionCase[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VUnionCase[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue+VUnionCase[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VUnionCase[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VUnionCase[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VUnionCase[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue+VUnionCase[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue[0] VUnit()
+UNION FScript.Extensibility.ScriptValue[10] VUnionCase(Item1: System.String; Item2: System.String; Item3: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue[11] VTypeToken(Item: FScript.Extensibility.ScriptType)
+UNION FScript.Extensibility.ScriptValue[12] VCallable(Item: FScript.Extensibility.ICallableHandle)
+UNION FScript.Extensibility.ScriptValue[13] VTask(Item: FScript.Extensibility.ITaskHandle)
+UNION FScript.Extensibility.ScriptValue[14] VHostManaged(Item: FScript.Extensibility.HostManagedValue)
+UNION FScript.Extensibility.ScriptValue[1] VInt(Item: System.Int64)
+UNION FScript.Extensibility.ScriptValue[2] VFloat(Item: System.Double)
+UNION FScript.Extensibility.ScriptValue[3] VBool(Item: System.Boolean)
+UNION FScript.Extensibility.ScriptValue[4] VString(Item: System.String)
+UNION FScript.Extensibility.ScriptValue[5] VList(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue[6] VTuple(Item: Microsoft.FSharp.Collections.FSharpList`1[FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue[7] VRecord(Item: Microsoft.FSharp.Collections.FSharpMap`2[System.String,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue[8] VMap(Item: Microsoft.FSharp.Collections.FSharpMap`2[FScript.Extensibility.MapKey,FScript.Extensibility.ScriptValue])
+UNION FScript.Extensibility.ScriptValue[9] VOption(Item: Microsoft.FSharp.Core.FSharpOption`1[FScript.Extensibility.ScriptValue])

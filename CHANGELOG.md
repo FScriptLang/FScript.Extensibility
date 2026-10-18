@@ -2,4 +2,4 @@
 
 ## [Unreleased]
 
-- Initialize the independent FScript extension SDK repository.
+- Provide stable extension contracts, attributed CLR types, typed function helpers, and opaque callback and task handles.
