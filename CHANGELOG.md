@@ -2,8 +2,12 @@
 
 ## [Unreleased]
 
+## [2.0.0]
+
 - Publish NuGet releases through GitHub Actions trusted publishing.
 - Add named generic opaque host types and scoped provider workers in the SDK 2.0 contract.
+
+**Full Changelog**: https://github.com/MagnusOpera/FScript.Extensibility/compare/1.0.0...2.0.0
 
 ## [1.0.0]
 
