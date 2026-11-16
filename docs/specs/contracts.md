@@ -8,4 +8,8 @@ Reflection helpers reject unsupported/recursive projections, hidden constructibl
 
 Callable/task handles are host-created and session-bound. Invocation contexts expire after the handler returns. Hosts reject invalid handle implementations, cross-session use, and use after evaluation expires. Hosts enforce runtime limits and preserve callback source errors independently of SDK exceptions.
 
-Compatible 1.x releases retain unsigned AssemblyVersion 1.0.0.0 and public record/union shapes. API snapshot validation is required for every change; package validation compares future compatible releases against 1.0.0. FSharp.Core remains an explicit package dependency.
+SDK 2 adds named type applications and type parameter lists on host descriptors. A generic descriptor must be opaque and expose no visible fields. Runtime validation checks the registered descriptor and type arity. The script type checker enforces the type arguments across uses.
+
+`ExternalCallContext.SpawnWorker` starts provider work in the interpreter’s tracked task scope and supplies a fresh context to the worker. A worker can invoke callable handles captured in the same evaluation scope. The host still owns callback permissions, failure reporting, and task lifetime.
+
+Compatible 2.x releases retain unsigned AssemblyVersion 2.0.0.0 and public record/union shapes. API snapshot validation is required for every change. Later compatible releases use 2.0.0 as the package validation baseline. FSharp.Core remains an explicit package dependency.

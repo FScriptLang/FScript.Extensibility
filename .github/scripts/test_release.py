@@ -17,6 +17,7 @@ class ReleaseTests(unittest.TestCase):
         self.git('config', 'user.email', 'tests@example.invalid')
         self.git('config', 'user.name', 'Release tests')
         (self.root / 'CHANGELOG.md').write_text('# Changelog\n\n## [Unreleased]\n\n- Initial SDK.\n')
+        (self.root / 'Directory.Build.props').write_text('<Project><AssemblyVersion>1.0.0.0</AssemblyVersion></Project>')
         shutil.copy(SCRIPTS / 'release.py', self.root)
         self.commit()
         self.bootstrap = self.git('rev-parse', 'HEAD').strip()
@@ -43,6 +44,14 @@ class ReleaseTests(unittest.TestCase):
         result = self.preview('1.0.1')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('1.0.0...1.0.1', result.stdout)
+
+    def test_major_release_requires_updated_assembly_version(self):
+        self.git('tag', '1.0.0')
+        (self.root / 'Directory.Build.props').write_text('<Project><AssemblyVersion>2.0.0.0</AssemblyVersion></Project>')
+        self.commit()
+        result = self.preview('2.0.0')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('1.0.0...2.0.0', result.stdout)
 
     def test_invalid_versions_and_dirty_tree(self):
         for version in ['1.0.0-beta', '2.0.0', '1.0.1']:

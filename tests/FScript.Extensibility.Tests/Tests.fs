@@ -20,10 +20,22 @@ type Contracts() =
     let registration = { HostInterop.empty with Types = [HostTypes.describe<Node>(); HostTypes.describe<Data>()]; Unions = [HostTypes.describeUnion<Mode>()] }
     let context = ExternalCallContext((fun _ _ -> failwith "unused"), (fun _ -> failwith "unused"), (fun _ -> failwith "unused"), ignore)
     [<Test>]
+    member _.GenericOpaqueDescriptorChecksIdentityAndArity() =
+        let descriptor = { Name = "Cell"; Fields = Map.empty; HostManaged = true; TypeParameters = [0] }
+        let registration = { HostInterop.empty with Types = [descriptor] }
+        let definitions = HostInterop.typeDefinitions registration []
+        let value = HostInterop.create registration "Cell" Map.empty (obj())
+        Assert.That(HostInterop.matches definitions (TApplied("Cell", [TInt])) value, Is.True)
+        Assert.That(HostInterop.matches definitions (TApplied("Cell", [TInt; TString])) value, Is.False)
+        Assert.That(HostInterop.matches definitions (TNamed "Cell") value, Is.False)
+        let invalid = { registration with Types = [{ descriptor with TypeParameters = [0; 0] }] }
+        Assert.Throws<ExtensionException>(Action(fun () -> HostInterop.typeDefinitions invalid [] |> ignore)) |> ignore
+
+    [<Test>]
     member _.``SDK has stable unsigned identity and no implementation dependency``() =
         let assembly = typeof<ScriptValue>.Assembly
         Assert.That(assembly.GetName().Name, Is.EqualTo "FScript.Extensibility")
-        Assert.That(assembly.GetName().Version, Is.EqualTo(Version(1,0,0,0)))
+        Assert.That(assembly.GetName().Version, Is.EqualTo(Version(2,0,0,0)))
         Assert.That(assembly.GetName().GetPublicKeyToken(), Is.Empty)
         for reference in assembly.GetReferencedAssemblies() do
             Assert.That(reference.Name, Does.Not.StartWith("FScript.Language").And.Not.StartWith("FScript.Runtime"))

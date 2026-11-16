@@ -1,6 +1,6 @@
 # FScript.Extensibility
 
-Stable contracts and authoring helpers for FScript extensions. Install `MagnusOpera.FScript.Extensibility` 1.0.0 and open `FScript.Extensibility`. Extensions need no reference to FScript.Language or FScript.Runtime.
+Stable contracts and authoring helpers for FScript extensions. Install `MagnusOpera.FScript.Extensibility` 2.0.0 and open `FScript.Extensibility`. Extensions need no reference to FScript.Language or FScript.Runtime.
 
 ```fsharp
 open FScript.Extensibility
@@ -96,12 +96,12 @@ A provider method is public/static, marked `[<FScriptExternProvider>]`, accepts 
 
 An embedding application additionally references Runtime and converts SDK registrations with `FScript.Runtime.ExtensionBridge.toLanguageRegistration`. Native embedding values stay in Language; CLR conversion belongs in SDK handlers. Callback failures preserve script locations at the Runtime boundary. Language has no SDK dependency and retains its Fable boundary.
 
-The SDK targets `netstandard2.1`, explicitly depends on FSharp.Core, and has no Language, Runtime, TOML, or serialization dependency. Package/file/informational versions follow releases. The unsigned assembly identity stays `FScript.Extensibility, Version=1.0.0.0` throughout compatible 1.x releases. Public record and discriminated-union shapes are frozen in 1.x; breaking changes require a new major version. Providers must rebuild when migrating from the former Runtime-owned authoring API.
+The SDK targets `netstandard2.1`, explicitly depends on FSharp.Core, and has no Language, Runtime, TOML, or serialization dependency. Package/file/informational versions follow releases. The unsigned assembly identity stays `FScript.Extensibility, Version=2.0.0.0` throughout compatible 2.x releases. Public record and discriminated-union shapes are frozen in 2.x; breaking changes require a new major version. Providers must rebuild when migrating from the former Runtime-owned authoring API.
 
 ## Development and release
 
-Run `make build test verify-api pack verify-changelog`. `api/PublicAPI.txt` is the reviewed public API baseline; `make update-api` is an explicit review action, never an automatic CI fix. Compatible releases after 1.0.0 also enable NuGet package validation against published 1.0.0.
+Run `make build test verify-api pack verify-changelog`. `api/PublicAPI.txt` is the reviewed public API baseline; `make update-api` is an explicit review action, never an automatic CI fix. Compatible releases after 2.0.0 enable NuGet package validation against published 2.0.0. SDK 1.x providers must be rebuilt against the 2.0 contract.
 
-`make release-prepare version=X.Y.Z dryrun=true` previews preparation from a clean checkout. Preparation validates checks, moves Unreleased notes, creates the release commit and annotated tag. The first compare link uses the bootstrap commit; later releases compare version tags. Push with `git push origin main --follow-tags`, wait for the tag workflow's draft, verify changelog-derived notes/artifacts, then publish that draft. The published-release workflow publishes NuGet using the repository's `NUGET_KEY` secret. No signing or product/website release is performed here.
+`make release-prepare version=X.Y.Z dryrun=true` previews preparation from a clean checkout. Preparation validates checks, moves Unreleased notes, creates the release commit and annotated tag. The first compare link uses the bootstrap commit; later releases compare version tags. Push with `git push origin main --follow-tags`, wait for the tag workflow's draft, verify changelog-derived notes/artifacts, then publish that draft. The published-release workflow uses [NuGet trusted publishing](https://learn.microsoft.com/en-us/nuget/nuget-org/trusted-publishing). The policy for `MagnusOpera/FScript.Extensibility` references `on-release-published.yml`. The workflow uses the policy creator's NuGet username to obtain a short-lived key. No signing or product/website release is performed here.
 
 See [contract specification](docs/specs/contracts.md) and [architecture](docs/architecture/README.md). Contributor requirements are in [AGENTS.md](AGENTS.md).

@@ -15,9 +15,19 @@ module HostInterop =
                 fail "Host type name must not be empty"
             if List.contains descriptor.Name reserved || Map.containsKey descriptor.Name definitions then
                 fail $"Host type name conflict: '{descriptor.Name}'"
-            definitions <- definitions.Add(descriptor.Name,
+            let body =
                 if descriptor.HostManaged then THostManaged(descriptor.Name, descriptor.Fields)
-                else TRecord descriptor.Fields)
+                else TRecord descriptor.Fields
+            let definition =
+                match descriptor.TypeParameters with
+                | [] -> body
+                | parameters ->
+                    if not descriptor.HostManaged || not descriptor.Fields.IsEmpty then
+                        fail $"Generic host type '{descriptor.Name}' must be opaque and have no visible fields"
+                    if Set.count (Set.ofList parameters) <> parameters.Length then
+                        fail $"Generic host type '{descriptor.Name}' repeats a type parameter"
+                    TGenericDefinition(parameters, body)
+            definitions <- definitions.Add(descriptor.Name, definition)
         for descriptor in registration.Unions do
             if System.String.IsNullOrWhiteSpace descriptor.Name || descriptor.Cases.IsEmpty then
                 fail "Host unions require a name and at least one case"
@@ -33,9 +43,14 @@ module HostInterop =
             fields |> Map.forall (fun name fieldType ->
                 values |> Map.tryFind name |> Option.exists (matches definitions fieldType))
         match expected, value with
-        | TNamed name, _ -> definitions.TryFind name |> Option.exists (fun t -> matches definitions t value)
+        | (TNamed _ | TApplied _) as typ, _ ->
+            let expanded = Types.expand definitions typ
+            expanded <> typ && matches definitions expanded value
         | THostManaged (name, fields), VHostManaged host ->
             host.Descriptor.HostManaged && host.Descriptor.Name = name && host.Descriptor.Fields = fields
+            && (match definitions.TryFind name with
+                | Some (TGenericDefinition (parameters, _)) -> host.Descriptor.TypeParameters = parameters
+                | _ -> host.Descriptor.TypeParameters.IsEmpty)
             && host.Fields.Count = fields.Count && fieldsMatch fields host.Fields
         | TRecord fields, VRecord values -> fieldsMatch fields values
         | TUnit, VUnit | TInt, VInt _ | TFloat, VFloat _ | TBool, VBool _ | TString, VString _ -> true
@@ -65,7 +80,11 @@ module HostInterop =
         match registration.Types |> List.tryFind (fun d -> d.Name = typeName && d.HostManaged) with
         | Some descriptor ->
             let value = VHostManaged { Descriptor = descriptor; Fields = fields; Payload = payload }
-            validate definitions (TNamed typeName) value
+            let expected =
+                match descriptor.TypeParameters with
+                | [] -> TNamed typeName
+                | parameters -> TApplied(typeName, List.map TVar parameters)
+            validate definitions expected value
             value
         | None -> fail $"Unknown host-managed type '{typeName}'"
 
@@ -118,17 +137,18 @@ module HostInterop =
                     let bound = valueType value
                     bindings <- bindings.Add(id, bound)
                     observe bound value
-            | TNamed name ->
-                match Map.tryFind name definitions with
-                | Some expanded -> observe expanded value
-                | None -> validate definitions expected value
+            | TNamed _ | TApplied _ ->
+                let expanded = Types.expand definitions expected
+                if expanded = expected then validate definitions expected value
+                else observe expanded value
             | _ ->
                 validate definitions expected value
                 match expected, value with
                 | THostManaged (name, fields), VHostManaged host ->
                     // A polymorphic parameter must also carry a registered descriptor.
                     match Map.tryFind name definitions with
-                    | Some (THostManaged (_, registered)) when registered = fields -> ()
+                    | Some (THostManaged (_, registered))
+                    | Some (TGenericDefinition (_, THostManaged (_, registered))) when registered = fields -> ()
                     | _ -> fail $"Unregistered host-managed type '{name}'"
                     observeFields fields host.Fields
                 | TRecord fields, VRecord actual -> observeFields fields actual

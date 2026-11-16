@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Publish NuGet releases through GitHub Actions trusted publishing.
+- Add named generic opaque host types and scoped provider workers in the SDK 2.0 contract.
+
 ## [1.0.0]
 
 - Provide stable extension contracts, attributed CLR types, typed function helpers, and opaque callback and task handles.

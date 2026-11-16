@@ -17,6 +17,8 @@ type ScriptType =
     | TOption of ScriptType
     | TFun of ScriptType * ScriptType
     | TNamed of string
+    | TApplied of name: string * arguments: ScriptType list
+    | TGenericDefinition of parameters: int list * body: ScriptType
     | TUnion of string * Map<string, ScriptType option>
     | TTypeToken
     | TVar of int
@@ -26,7 +28,8 @@ type ScriptType =
 type HostTypeDescriptor =
     { Name: string
       Fields: Map<string, ScriptType>
-      HostManaged: bool }
+      HostManaged: bool
+      TypeParameters: int list }
 
 /// Script-constructible union supplied by a host; payloads use ordinary script types.
 type HostUnionDescriptor =
@@ -37,6 +40,17 @@ type HostUnionDescriptor =
 type FunctionScheme = Forall of int list * ScriptType
 
 module Types =
+    let internal expand (definitions: Map<string, ScriptType>) = function
+        | TNamed name as typ ->
+            match definitions.TryFind name with
+            | Some (TGenericDefinition _) | None -> typ
+            | Some body -> body
+        | TApplied (name, arguments) as typ ->
+            match definitions.TryFind name with
+            | Some (TGenericDefinition (parameters, body)) when parameters.Length = arguments.Length -> body
+            | _ -> typ
+        | typ -> typ
+
     let rec ftvType t =
         match t with
         | TUnit | TInt | TFloat | TBool | TString -> Set.empty
@@ -48,6 +62,8 @@ module Types =
         | TMap (tk, tv) -> Set.union (ftvType tk) (ftvType tv)
         | TOption t1 -> ftvType t1
         | TFun (a, b) -> Set.union (ftvType a) (ftvType b)
+        | TApplied (_, arguments) -> arguments |> List.map ftvType |> List.fold Set.union Set.empty
+        | TGenericDefinition (parameters, body) -> Set.difference (ftvType body) (Set.ofList parameters)
         | TNamed _ | TUnion _ | TTypeToken -> Set.empty
         | TVar v | TNumeric v -> Set.singleton v
 
@@ -77,6 +93,8 @@ module Types =
             | TOption t1 -> sprintf "%s option" (postfixArg t1)
             | TFun (a, b) -> sprintf "(%s -> %s)" (go a) (go b)
             | TNamed n -> n
+            | TApplied (name, arguments) -> name + "<" + (arguments |> List.map go |> String.concat ", ") + ">"
+            | TGenericDefinition (_, body) -> go body
             | TUnion (name, _) -> name
             | TTypeToken -> "type"
             | TNumeric _ -> "numeric"

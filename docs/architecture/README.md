@@ -6,4 +6,6 @@ Types.fs defines declarative type contracts; Values.fs defines boundary values, 
 
 The interpreter repository owns the Runtime adapter. It recursively translates data and descriptors, associates handles with native evaluation sessions, adapts standard host functions, and restores callback error locations. The Language assembly never references the SDK. This ownership separates stable provider binaries from product assembly versions.
 
-PR/main CI builds, tests, checks the public API and changelog, and packs. Tag CI verifies versioned changelog notes and creates the draft with NuGet/symbol artifacts. Publishing that draft triggers NuGet publication. The first release compares the bootstrap commit with tag 1.0.0; later releases compare successive tags. No native packaging, signing, npm, VSIX, or website workflow belongs here.
+PR/main CI builds, tests, checks the public API and changelog, and packs. Tag CI verifies versioned changelog notes and creates the draft with NuGet/symbol artifacts. Publishing that draft triggers the NuGet publish job. The job exchanges a GitHub Actions OIDC token for a short-lived key before pushing the release assets. The first release compares the bootstrap commit with tag 1.0.0; later releases compare successive tags. No native packaging, signing, npm, VSIX, or website workflow belongs here.
+
+SDK 2 transports opaque generic type definitions and applications as metadata. The provider-worker callback accepts a host-created invocation context and keeps scheduler implementation and lifetime enforcement in the host.

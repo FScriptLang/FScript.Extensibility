@@ -27,7 +27,12 @@ type ScriptValue =
     | VHostManaged of HostManagedValue
 and HostManagedValue =
     { Descriptor: HostTypeDescriptor; Fields: Map<string, ScriptValue>; Payload: obj }
-and [<Sealed>] ExternalCallContext(apply: ScriptValue -> ScriptValue -> ScriptValue, spawnTask: ScriptValue -> ScriptValue, awaitTask: ScriptValue -> ScriptValue, checkRuntime: unit -> unit) =
+and [<Sealed>] ExternalCallContext(apply: ScriptValue -> ScriptValue -> ScriptValue, spawnTask: ScriptValue -> ScriptValue, awaitTask: ScriptValue -> ScriptValue, checkRuntime: unit -> unit,
+                                 spawnWorker: (ExternalCallContext -> unit) -> ScriptValue) =
+    new(apply, spawnTask, awaitTask, checkRuntime) =
+        ExternalCallContext(apply, spawnTask, awaitTask, checkRuntime,
+                            fun _ -> raise (ExtensionException("This host does not support provider workers.")))
+    member _.SpawnWorker = spawnWorker
     member _.Apply = apply
     member _.SpawnTask = spawnTask
     member _.AwaitTask = awaitTask

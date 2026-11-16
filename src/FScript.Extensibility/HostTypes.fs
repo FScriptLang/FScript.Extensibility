@@ -92,7 +92,7 @@ module HostTypes =
             properties
             |> Array.map (fun property -> property.Name, fieldType (clrType :: stack) $"{path}.{property.Name}" property.PropertyType)
             |> Map.ofArray
-        { Name = name; Fields = fields; HostManaged = not attribute.ScriptConstructible }
+        { Name = name; Fields = fields; HostManaged = not attribute.ScriptConstructible; TypeParameters = [] }
 
     and private describeUnionType stack path (clrType: System.Type) : HostUnionDescriptor =
         let name = hostName path clrType
