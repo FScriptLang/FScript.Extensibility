@@ -9,14 +9,19 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
+    environment: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ github.event.release.tag_name }}
+          persist-credentials: false
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 10.0.401
+          global-json-file: global.json
       - uses: robinraju/release-downloader@v1.11
         with:
           tag: ${{ github.event.release.tag_name }}

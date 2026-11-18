@@ -7,3 +7,5 @@ Every ordinary commit must add a concise single-line bullet under CHANGELOG.md U
 Use SemVer: compatible packages keep an unsigned AssemblyVersion equal to major.0.0.0. Public record and union shapes are frozen within a major version.
 Release with `make release-prepare version=X.Y.Z`, push main with --follow-tags, wait for the tag workflow's draft, verify its changelog notes and compare link, then publish that draft. Never bypass CI draft creation.
 Only NuGet publication belongs here. No product binaries, signing, npm, editor, or website releases.
+
+PR validation must be credential-free with read-only permissions and checkout credential persistence disabled. NuGet publishing uses the restricted `release` environment, and the NuGet Trusted Publishing policy must require that environment.

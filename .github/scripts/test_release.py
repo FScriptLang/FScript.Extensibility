@@ -39,6 +39,19 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(self.git('status', '--porcelain'), '')
         self.assertEqual(self.git('tag'), '')
 
+    def test_pr_validation_has_no_credentials_and_nuget_requires_release_environment(self):
+        workflows = SCRIPTS.parent / 'workflows'
+        ci = (workflows / 'ci.yml').read_text()
+        self.assertIn('  pull_request:', ci)
+        self.assertIn('  contents: read', ci)
+        self.assertIn('persist-credentials: false', ci)
+        for forbidden in ['secrets.', 'secrets: inherit', 'id-token:', 'environment:', 'pull_request_target']:
+            self.assertNotIn(forbidden, ci)
+        publish = (workflows / 'on-release-published.yml').read_text()
+        self.assertIn('    environment: release', publish)
+        self.assertIn('      id-token: write', publish)
+        self.assertIn('persist-credentials: false', publish)
+
     def test_subsequent_compare(self):
         self.git('tag', '1.0.0')
         result = self.preview('1.0.1')
@@ -64,7 +77,7 @@ class ReleaseTests(unittest.TestCase):
         command = ['python3', str(SCRIPTS / 'notes.py'), '1.0.0']
         self.assertNotEqual(subprocess.run(command, cwd=self.root, capture_output=True).returncode, 0)
         with (self.root / 'CHANGELOG.md').open('a') as stream:
-            stream.write('\n**Full Changelog**: https://github.com/MagnusOpera/FScript.Extensibility/compare/bootstrap...1.0.0\n')
+            stream.write('\n**Full Changelog**: https://github.com/FScriptLang/FScript.Extensibility/compare/bootstrap...1.0.0\n')
         result = subprocess.run(command, cwd=self.root, text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('- SDK.', result.stdout)

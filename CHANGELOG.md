@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+- Restrict NuGet publishing to the release environment and keep pull-request validation credential-free.
+- Build and test the SDK with .NET 11 while preserving the netstandard2.1 library target and public API.
+- Update repository metadata and future release links for FScriptLang while retaining Magnus Opera NuGet package identity.
+
 ## [2.0.0]
 
 - Publish NuGet releases through GitHub Actions trusted publishing.

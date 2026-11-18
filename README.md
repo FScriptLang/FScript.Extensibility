@@ -1,5 +1,8 @@
 # FScript.Extensibility
 
+Development uses .NET SDK 11.0.100, pinned in `global.json`; tests run on .NET 11.
+The published library continues targeting `netstandard2.1`.
+
 Stable contracts and authoring helpers for FScript extensions. Install `MagnusOpera.FScript.Extensibility` 2.0.0 and open `FScript.Extensibility`. Extensions need no reference to FScript.Language or FScript.Runtime.
 
 ```fsharp
@@ -102,6 +105,6 @@ The SDK targets `netstandard2.1`, explicitly depends on FSharp.Core, and has no 
 
 Run `make build test verify-api pack verify-changelog`. `api/PublicAPI.txt` is the reviewed public API baseline; `make update-api` is an explicit review action, never an automatic CI fix. Compatible releases after 2.0.0 enable NuGet package validation against published 2.0.0. SDK 1.x providers must be rebuilt against the 2.0 contract.
 
-`make release-prepare version=X.Y.Z dryrun=true` previews preparation from a clean checkout. Preparation validates checks, moves Unreleased notes, creates the release commit and annotated tag. The first compare link uses the bootstrap commit; later releases compare version tags. Push with `git push origin main --follow-tags`, wait for the tag workflow's draft, verify changelog-derived notes/artifacts, then publish that draft. The published-release workflow uses [NuGet trusted publishing](https://learn.microsoft.com/en-us/nuget/nuget-org/trusted-publishing). The policy for `MagnusOpera/FScript.Extensibility` references `on-release-published.yml`. The workflow uses the policy creator's NuGet username to obtain a short-lived key. No signing or product/website release is performed here.
+`make release-prepare version=X.Y.Z dryrun=true` previews preparation from a clean checkout. Preparation validates checks, moves Unreleased notes, creates the release commit and annotated tag. The first compare link uses the bootstrap commit; later releases compare version tags. Push with `git push origin main --follow-tags`, wait for the tag workflow's draft, verify changelog-derived notes/artifacts, then publish that draft. The published-release workflow uses [NuGet trusted publishing](https://learn.microsoft.com/en-us/nuget/nuget-org/trusted-publishing). The policy for `FScriptLang/FScript.Extensibility` references `on-release-published.yml` and environment `release`. The workflow uses the policy creator's NuGet username to obtain a short-lived key. No signing or product/website release is performed here.
 
 See [contract specification](docs/specs/contracts.md) and [architecture](docs/architecture/README.md). Contributor requirements are in [AGENTS.md](AGENTS.md).

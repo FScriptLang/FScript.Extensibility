@@ -8,8 +8,8 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>FScript contributors</Authors>
     <Description>Stable, implementation-independent FScript extension contracts and authoring helpers.</Description>
-    <RepositoryUrl>https://github.com/MagnusOpera/FScript.Extensibility</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/MagnusOpera/FScript.Extensibility</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FScriptLang/FScript.Extensibility</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/FScriptLang/FScript.Extensibility</PackageProjectUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
