@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Replace provider spawning and awaiting APIs with cancellable asynchronous operations in SDK 3.
 - Restrict NuGet publishing to the release environment and keep pull-request validation credential-free.
 - Build and test the SDK with .NET 11 while preserving the netstandard2.1 library target and public API.
 - Update repository metadata and future release links for FScriptLang while retaining Magnus Opera NuGet package identity.

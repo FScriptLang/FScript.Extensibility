@@ -1,5 +1,5 @@
 .PHONY: build test pack verify-api update-api verify-changelog release-prepare
-version ?= 2.0.0
+version ?= 3.0.0
 build:
 	dotnet build FScript.Extensibility.sln -c Release
 

@@ -18,7 +18,7 @@ type Recursive = Next of Recursive
 [<TestFixture>]
 type Contracts() =
     let registration = { HostInterop.empty with Types = [HostTypes.describe<Node>(); HostTypes.describe<Data>()]; Unions = [HostTypes.describeUnion<Mode>()] }
-    let context = ExternalCallContext((fun _ _ -> failwith "unused"), (fun _ -> failwith "unused"), (fun _ -> failwith "unused"), ignore)
+    let context = ExternalCallContext((fun _ _ -> failwith "unused"), (fun _ -> failwith "unused"), ignore)
     [<Test>]
     member _.GenericOpaqueDescriptorChecksIdentityAndArity() =
         let descriptor = { Name = "Cell"; Fields = Map.empty; HostManaged = true; TypeParameters = [0] }
@@ -35,7 +35,7 @@ type Contracts() =
     member _.``SDK has stable unsigned identity and no implementation dependency``() =
         let assembly = typeof<ScriptValue>.Assembly
         Assert.That(assembly.GetName().Name, Is.EqualTo "FScript.Extensibility")
-        Assert.That(assembly.GetName().Version, Is.EqualTo(Version(2,0,0,0)))
+        Assert.That(assembly.GetName().Version, Is.EqualTo(Version(3,0,0,0)))
         Assert.That(assembly.GetName().GetPublicKeyToken(), Is.Empty)
         for reference in assembly.GetReferencedAssemblies() do
             Assert.That(reference.Name, Does.Not.StartWith("FScript.Language").And.Not.StartWith("FScript.Runtime"))
@@ -91,3 +91,20 @@ type Contracts() =
         let error = Assert.Throws<ExtensionException>(Action(fun () -> fn.Impl context [VUnit] |> ignore)) |> nonNull
         Assert.That(error.InnerException, Is.SameAs(cause))
         Assert.That(error.Message, Does.Contain("Host.fail"))
+
+[<TestFixture>]
+type AsyncContracts() =
+    [<Test>]
+    member _.``SDK exposes asynchronous operations without scheduling or awaiting methods`` () =
+        let properties = typeof<ExternalCallContext>.GetProperties() |> Array.map _.Name
+        Assert.That(properties, Is.EquivalentTo(["Apply";"ExposeAsync";"CheckRuntime"]))
+
+    [<Test>]
+    member _.``Host receives a cancellable asynchronous operation`` () =
+        let mutable factory = None
+        let context = ExternalCallContext((fun _ _ -> failwith "unused"), (fun work -> factory <- Some work; VInt 17L), ignore)
+        context.ExposeAsync(fun token -> System.Threading.Tasks.Task.FromCanceled<ScriptValue>(token)) |> ignore
+        use cancellation = new System.Threading.CancellationTokenSource()
+        cancellation.Cancel()
+        let pending = factory.Value cancellation.Token
+        Assert.That(pending.IsCanceled, Is.True)

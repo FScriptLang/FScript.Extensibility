@@ -14,7 +14,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
     <EnablePackageValidation>true</EnablePackageValidation>
-    <PackageValidationBaselineVersion Condition="'$(Version)' != '2.0.0'">2.0.0</PackageValidationBaselineVersion>
+    <PackageValidationBaselineVersion Condition="'$(Version)' != '3.0.0'">3.0.0</PackageValidationBaselineVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs"/>
